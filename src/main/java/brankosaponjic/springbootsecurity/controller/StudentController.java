@@ -11,20 +11,6 @@ import java.util.List;
 @RequestMapping("api/v1/students")
 public class StudentController {
 
-//    private static final List<Student> STUDENTS = Arrays.asList(
-//            new Student(1, "Paolo Rossi"),
-//            new Student(2, "Bruno Conti"),
-//            new Student(3, "Marco Tardelli")
-//    );
-//
-//    @GetMapping(path = "{studentId}")
-//    public Student getStudents(@PathVariable Integer studentId) throws Exception {
-//        return STUDENTS.stream()
-//                .filter(student -> studentId.equals(student.getStudentId()))
-//                .findFirst()
-//                .orElseThrow(() -> new Exception("Student " + studentId + " does not exists."));
-//    }
-
     private final StudentService studentService;
 
     @Autowired
