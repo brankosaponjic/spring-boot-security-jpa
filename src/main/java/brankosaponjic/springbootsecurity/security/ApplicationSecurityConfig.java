@@ -9,11 +9,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    // Basic Auth do not support logout option
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                // with antMatchers we permit access without login
+                .antMatchers("/", "index", "/css/*", "/js/*")
+                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
